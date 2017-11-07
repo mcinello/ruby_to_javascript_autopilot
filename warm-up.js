@@ -47,15 +47,22 @@ function accumulative(num) {
 }
 accumulative(1)
 
-var containers = ['purse', 'wallet', 'backpack'];
 
+var containers = ['purse', 'wallet', 'backpack'];
 for (var num = 0; num < containers.length; num++) {
   var item = containers[num];
   console.log(item);
 }
 
+
 function helloWorld() {
   return "Hello world!"
 }
-
 console.log(helloWorld())
+
+
+function add(num1, num2) {
+  return num1 + num2
+}
+var amount = add(5,7)
+console.log(amount);
