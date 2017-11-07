@@ -36,3 +36,13 @@ function rep(num) {
   }
 }
 rep(10)
+
+function accumulative(num) {
+  var total = 0
+  var repeat = 100
+  for (var i = 0; i < repeat; i++) {
+    total += num
+  }
+  console.log(total);
+}
+accumulative(1)
