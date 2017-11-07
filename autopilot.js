@@ -18,11 +18,11 @@ function pickUpPassenger(car) {
 
 function getDestination(car) {
   if (car["city"] === 'Toronto') {
-    console.log("Mississauga");
+      return "Mississauga";
   } else if (car["city"] === 'Mississauga') {
-    console.log("London");
+      return "London";
   } else if (car["city"] === 'London') {
-    console.log("Toronto");
+      return "Toronto";
   }
 }
 
@@ -36,6 +36,16 @@ function getGasDisplay(gasAmount) {
   return gasAmount
 }
 
+function drive(car, city_distance) {
+  if (car["gas"] < city_distance) {
+    fillUpGas(car);
+  }
+
+  car["city"] = getDestination(car);
+  car["gas"] -= city_distance;
+  console.log("Drove to " + car["city"] + ". Remaining gas: " + getGasDisplay(car["gas"]));
+}
+
 
 addCar(cars, getNewCar);
 console.log(cars);
@@ -43,3 +53,4 @@ pickUpPassenger(cars[0])
 console.log(cars);
 getDestination(cars[0])
 fillUpGas(cars[0])
+drive(cars[0], 20)
