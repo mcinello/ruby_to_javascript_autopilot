@@ -26,3 +26,5 @@ var repeat = 10;
 for (var i=0; i < repeat; i++) {
   console.log("Doing the same thing over and over.");
 }
+
+var base = 5;
