@@ -23,8 +23,16 @@ var num = 16;
 // 10 times do
 
 var repeat = 10;
-for (var i=0; i < repeat; i++) {
+for (var i = 0; i < repeat; i++) {
   console.log("Doing the same thing over and over.");
 }
 
-var base = 5;
+// 20 times num + base (5)
+function rep(num) {
+  var base = 5;
+  var repeat = 20;
+  for (var i = 0; i < repeat; i++) {
+    console.log(num + base);
+  }
+}
+rep(10)
