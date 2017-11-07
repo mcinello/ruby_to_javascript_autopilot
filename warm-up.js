@@ -46,3 +46,16 @@ function accumulative(num) {
   console.log(total);
 }
 accumulative(1)
+
+var containers = ['purse', 'wallet', 'backpack'];
+
+for (var num = 0; num < containers.length; num++) {
+  var item = containers[num];
+  console.log(item);
+}
+
+function helloWorld() {
+  return "Hello world!"
+}
+
+console.log(helloWorld())
