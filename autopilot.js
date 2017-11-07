@@ -27,13 +27,13 @@ function getDestination(car) {
 }
 
 function fillUpGas(car) {
-  var old_gas = car["gas"];
+  var oldGas = car["gas"];
   car["gas"] = 100;
-  console.log("Filled up to " + car["gas"] + " on gas from " + getGasDisplay(old_gas));
+  console.log("Filled up to " + car["gas"] + " on gas from " + getGasDisplay(oldGas));
 }
 
 function getGasDisplay(gasAmount) {
-  return gasAmount
+  return gasAmount;
 }
 
 function drive(car, city_distance) {
@@ -46,6 +46,29 @@ function drive(car, city_distance) {
   console.log("Drove to " + car["city"] + ". Remaining gas: " + getGasDisplay(car["gas"]));
 }
 
+function dropOffPassengers(car) {
+  var previousPax = car["passengers"];
+  car["passengers"] = 0;
+  console.log("Dropped off " + previousPax + " passengers.");
+}
+
+function act(car) {
+    var distanceBetweenCities = 50
+
+    if (car["gas"] < 20) {
+      return fillUpGas(car)
+    } else if (car["passengers"] < 3) {
+      return pickUpPassenger(car)
+    } else {
+      if (car["gas"] < distanceBetweenCities) {
+        var droveTo = drive(car, distanceBetweenCities);
+        var paxDropped = dropOffPassengers(car);
+        console.log(droveTo + paxDropped);
+      }
+    }
+}
+
+
 
 addCar(cars, getNewCar);
 console.log(cars);
@@ -54,3 +77,5 @@ console.log(cars);
 getDestination(cars[0])
 fillUpGas(cars[0])
 drive(cars[0], 20)
+dropOffPassengers(cars[0])
+act(cars[0])
